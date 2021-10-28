@@ -16,6 +16,12 @@ app.get('/api/ip/:ip', function(req, res) {
     res.send('ALLOW')
 })
 
+app.get('/api/ips', function(req, res) {
+    const configFile = fs.readFileSync(`config.yaml`, 'utf8')
+    const config = yaml.load(configFile)
+    res.send(config.IP_WHITELIST.join())
+})
+
 app.listen(8000, () => {
     console.log("listen port ", 8000)
 })
