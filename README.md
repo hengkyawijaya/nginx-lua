@@ -24,7 +24,11 @@ node index.js
 
 Access this url to test the whitelist engine using Nginx with lua
 ```
-http://localhost:8080
+http://localhost:8080/test-simple-ip
+```
+Or this for implementation cidr, but for now the list ip still hardcoded on lua script
+```
+http://localhost:8080/test-cidr
 ```
 
 Try to update config.yaml adding your IP that need to whitelist
